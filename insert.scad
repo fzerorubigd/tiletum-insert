@@ -7,7 +7,7 @@ g_b_print_lid = true;
 g_b_print_box = true; 
 
 // Focus on one box
-g_isolated_print_box = "cathedrals_4_x1"; 
+g_isolated_print_box = "circles_x1"; 
 
 // Used to visualize how all of the boxes fit together. 
 g_b_visualization = f;          
@@ -94,6 +94,8 @@ cat_46_height = (cat_height+gw)*2+gw;
 cat_46_depth = box_depth/2-gw2;
 
 cat_under_depth = box_depth-cat_46_depth;
+
+action_wheel_r = 80;
 
 echo ("Printing: ",g_isolated_print_box);
 data =
@@ -388,24 +390,26 @@ data =
             [ BOX_NO_LID_B, true],  
             [ BOX_COMPONENT,
                 [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ 80, 80, 3] ],
+                    [ CMP_COMPARTMENT_SIZE_XYZ, [ action_wheel_r, action_wheel_r, g_cut] ],
                     [CMP_SHAPE, ROUND],
                     [CMP_SHAPE_VERTICAL_B,                  t],
                 ]
             ], 
             [ BOX_COMPONENT,
                 [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ 50, 50, 3*2] ],
+                    [ CMP_COMPARTMENT_SIZE_XYZ, [ action_wheel_r-5*gw2, action_wheel_r-gw2, cat_under_depth-gw2] ],
                     [CMP_SHAPE, ROUND],
                     [CMP_SHAPE_VERTICAL_B,                  t],
                 ]
             ], 
             [ BOX_COMPONENT,
                 [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ 35, 35, 3*2+20] ],
-                    [CMP_SHAPE, ROUND],
-                    [CMP_PEDESTAL_BASE_B, true],
-                    [CMP_SHAPE_VERTICAL_B,                  t],
+                    [ CMP_COMPARTMENT_SIZE_XYZ, [ cat_4_width-gw2+1, cat_46_height/4-0.5, g_cut] ],
+                ]
+            ], 
+            [ BOX_COMPONENT,
+                [
+                    [ CMP_COMPARTMENT_SIZE_XYZ, [ cat_4_width/4, cat_46_height-gw2, g_cut] ],
                 ]
             ], 
         ]

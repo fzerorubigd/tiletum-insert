@@ -7,7 +7,7 @@ g_b_print_lid = true;
 g_b_print_box = true; 
 
 // Focus on one box
-g_isolated_print_box = "optional_spacer"; 
+g_isolated_print_box = "other_tokens_x1"; 
 
 // Used to visualize how all of the boxes fit together. 
 g_b_visualization = f;          
@@ -344,7 +344,7 @@ data =
             ], 
             [ BOX_COMPONENT,
                 [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ cat_6_width- (tile_width+gw2)*2, cat_46_height-gw2, cat_under_depth-(3+gw2)] ],
+                    [ CMP_COMPARTMENT_SIZE_XYZ, [ cat_6_width- (tile_width+gw2)*2, cat_46_height-gw2, cat_under_depth-gw] ],
                     [POSITION_XY, [tile_width*2+gw2,0]]
                 ]
             ],             

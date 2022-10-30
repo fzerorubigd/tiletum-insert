@@ -7,7 +7,7 @@ g_b_print_lid = true;
 g_b_print_box = true; 
 
 // Focus on one box
-g_isolated_print_box = "circles_x1"; 
+g_isolated_print_box = "optional_spacer"; 
 
 // Used to visualize how all of the boxes fit together. 
 g_b_visualization = f;          
@@ -96,6 +96,10 @@ cat_46_depth = box_depth/2-gw2;
 cat_under_depth = box_depth-cat_46_depth;
 
 action_wheel_r = 80;
+
+spacer_width = box_width - p_height - cat_width;
+spacer_height = box_width - tiles_width;
+spacer_depth = box_depth / 3;
 
 echo ("Printing: ",g_isolated_print_box);
 data =
@@ -413,7 +417,18 @@ data =
                 ]
             ], 
         ]
-    ]
+    ],
+    [   "optional_spacer",
+        [
+            [ BOX_SIZE_XYZ, [spacer_width, spacer_height, spacer_depth] ],
+            [ BOX_NO_LID_B, true],  
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ spacer_width-gw2, spacer_height-gw2, spacer_depth -gw ],],
+                    [POSITION_XY,                           [0,0]],
+                    [ CMP_CUTOUT_BOTTOM_B, true ],
+                ]
+            ]]]
 ];
 
 

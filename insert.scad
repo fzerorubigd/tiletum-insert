@@ -7,7 +7,7 @@ g_b_print_lid = true;
 g_b_print_box = true; 
 
 // Focus on one box
-g_isolated_print_box = "other_tokens_x1"; 
+g_isolated_print_box = ""; 
 
 // Used to visualize how all of the boxes fit together. 
 g_b_visualization = f;          
@@ -32,7 +32,7 @@ g_tolerance = 0.15;
 // The larger the value, the bigger the gap between the lid and the box.
 g_tolerance_detents_pos = 0.1;
 
-g_lid_solid = true;
+g_lid_solid = f;
 
 lid_attr = [[ LID_SOLID_B, g_lid_solid]];
 

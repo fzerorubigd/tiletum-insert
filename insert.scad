@@ -97,7 +97,7 @@ cat_under_depth = box_depth-cat_46_depth;
 
 action_wheel_r = 80;
 
-spacer_width = box_width - p_height - cat_width;
+spacer_width = box_width - p_height - cat_46_height;
 spacer_height = box_width - tiles_width;
 spacer_depth = box_depth / 3;
 
